@@ -4,7 +4,6 @@
     <title><%= content_for(:title) || "Weather App" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Weather App">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,11 +18,56 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <style>
+      :root {
+        --pico-border-radius: 2rem;
+        --pico-typography-spacing-vertical: 1.5rem;
+        --pico-form-element-spacing-vertical: 1rem;
+        --pico-form-element-spacing-horizontal: 1.25rem;
+        --pico-block-spacing-vertical: 0.2rem;
+        --pico-font-size: 1rem;
+      }
+      article {
+        --pico-card-background-color: #595469;
+      }
+      h1 {
+        --pico-font-weight: 400;
+        --pico-typography-spacing-vertical: 0.5rem;
+      }
+      h2 {
+        --pico-font-weight: 400;
+        --pico-typography-spacing-vertical: 0.5rem;
+      }
+      button {
+        --pico-font-weight: 700;
+      }
+      .vertical-flex-container {
+        display: flex;
+        justify-content: space-around; /* Distributes items evenly */
+        align-items: center;
+      }
+      .horizontal-flex-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+      .error-msg {
+        color: #000000;
+        padding: 16px;
+        margin-bottom: 16px;
+        text-align: center;
+        --pico-card-background-color: #ceab7d;
+      }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+    <main class="container-fluid">
+      <%= yield %>
+    </main>
   </body>
 </html>
