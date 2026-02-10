@@ -1,0 +1,2 @@
+class ForecastingError < StandardError
+end
