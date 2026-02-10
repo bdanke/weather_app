@@ -1,0 +1,2 @@
+class GeocodingError < StandardError
+end
