@@ -1,0 +1,16 @@
+<div>
+  <%= form_with url: "/retrieve_forecast", class: :address_form do |form| %>
+    <%= form.text_field :street, placeholder: :street, style: "margin-top: 16px;" %>
+    <%= form.text_field :city, placeholder: :city %>
+    <%= form.text_field :state, placeholder: :state %>
+    <%= form.text_field :postal_code, placeholder: :postal_code %>
+    <%= form.text_field :country, placeholder: :country %>
+    <%= form.submit "Submit" %>
+  <% end %>
+
+  <% flash.each do |_, message| %>
+    <article class="error-msg">
+      <%= message %>
+    </article>
+  <% end %>
+</div>

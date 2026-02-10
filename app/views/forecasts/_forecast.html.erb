@@ -1,0 +1,37 @@
+<div class="container" style="padding-top: 16px;">
+  <article>
+    <div class="grid">
+        <div class="vertical-flex-container">
+          <div></div>
+          Current Forecast for <%= forecast[:postal_code] %>
+          <div></div>
+        </div>
+        <div class="container">
+          <div class="horizontal-flex-container">
+            <div>
+              Current Temperature:
+            </div>
+            <div>
+              <%= forecast[:current_temperature] %>℃
+            </div>
+          </div>
+          <div class="horizontal-flex-container">
+            <div>
+              Max Temperature:
+            </div>
+            <div>
+              <%= forecast[:maximum_temperature] %>℃
+            </div>
+          </div>
+          <div class="horizontal-flex-container">
+            <div>
+              Min Temperature:
+            </div>
+            <div>
+              <%= forecast[:minimum_temperature] %>℃
+            </div>
+          </div>
+        </div>
+    </div>
+  </article>
+</div>
