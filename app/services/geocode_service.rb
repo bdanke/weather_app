@@ -1,6 +1,8 @@
 require "httparty"
 require "json"
 
+# Converts an address into latitude and longitude coordinates
+# using the geocode.maps.co API.
 class GeocodeService
   def self.geocode(address_params)
     response = HTTParty.get("https://geocode.maps.co/search",
@@ -15,6 +17,7 @@ class GeocodeService
       })
 
     if response.code == 200
+      # Use the most relevant result
       data = JSON.parse(response.body)[0]
       {
         lat: data["lat"],

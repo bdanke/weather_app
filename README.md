@@ -1,24 +1,40 @@
-# README
+# Weather App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails application that retrieves weather forecasts for a given address. It geocodes the address using [geocode.maps.co](https://geocode.maps.co) and fetches forecast data from the [Open-Meteo API](https://open-meteo.com).
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Address-based weather lookup (street, city, state, postal code, country)
+- Current temperature plus daily high/low
+- 30-minute per-postal-code caching to limit redundant API calls
+- Turbo Streams for dynamic form responses
 
-* System dependencies
+## Setup
 
-* Configuration
+```sh
+bundle install
+```
 
-* Database creation
+Add a Geocode API key to `.env`. You can use mine:
 
-* Database initialization
+```
+6988fc147eec2245514279kjh52a80a
+```
 
-* How to run the test suite
+To enable caching in development, run:
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+rails dev:cache
+```
 
-* Deployment instructions
+Then start the server:
 
-* ...
+```sh
+rails s
+```
+
+## Tests
+
+```sh
+bundle exec rspec
+```
