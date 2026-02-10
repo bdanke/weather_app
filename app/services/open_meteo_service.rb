@@ -1,6 +1,8 @@
 require "httparty"
 require "json"
 
+# Fetches a current and one day weather forecast from the Open Meteo API
+# and returns current, maximum, and mininum temperatures for today.
 class OpenMeteoService
   def self.retrieve_forecast(coordinates)
     response = HTTParty.get("https://api.open-meteo.com/v1/forecast",

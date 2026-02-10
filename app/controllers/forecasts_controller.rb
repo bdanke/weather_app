@@ -1,4 +1,6 @@
 class ForecastsController < ApplicationController
+  # Geocodes the submitted address and fetches the weather forecast,
+  # caching the result for 30 minutes keyed by postal code.
   def retrieve_forecast
     postal_code = address_params[:postal_code]
 
